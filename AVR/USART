@@ -11,7 +11,7 @@ void uart_init (void)
     UBRRH=(BAUDRATE>>8);
     UBRRL=BAUDRATE;                            // Seting the baud rate
     UCSRB|=(1<<TXEN)|(1<<RXEN);                // Enable Rx Tx
-    UCSRC|=(1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);   // Setting the data format
+    UCSRC|=(1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);   // Setting the data format i.e. 8-bit
 }
   
 void uart_transmit (unsigned char data)
