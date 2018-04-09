@@ -1,0 +1,37 @@
+#include <avr/io.h>
+#define BAUD 9600                          
+#define F_CPU 16000000UL
+#define BAUDRATE ((F_CPU)/(BAUD*16UL)-1)    
+                   
+
+  
+
+void uart_init (void)
+{
+    UBRRH=(BAUDRATE>>8);
+    UBRRL=BAUDRATE;                            // Seting the baud rate
+    UCSRB|=(1<<TXEN)|(1<<RXEN);                // Enable Rx Tx
+    UCSRC|=(1<<URSEL)|(1<<UCSZ0)|(1<<UCSZ1);   // Setting the data format
+}
+  
+void uart_transmit (unsigned char data)
+{
+    while (!( UCSRA & (1<<UDRE)));            // wait while register is free
+    UDR = data;                             // load data in the register
+}
+  
+
+unsigned char uart_recieve (void)
+{
+    while(!(UCSRA) & (1<<RXC));           // wait while data is being received
+    return UDR;                             // return 8-bit data
+}
+  
+int main (void)
+{
+uart_init();
+
+//data = uart_recieve();
+//uart_transmit(data);
+
+}
