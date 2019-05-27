@@ -1,7 +1,7 @@
 # KRSSG
 
-# LINKS
+# Links
 
-BLDC Tutorial [here](https://forum.arduino.cc/index.php?topic=276741.0)
+[BLDC Tutorial](https://forum.arduino.cc/index.php?topic=276741.0)
 
-BLDC Commutation Sequence [here](https://www.lucidarme.me/commutation-sequence-for-bldc-motors-using-hall-effect-position-sensors/)
+[BLDC Commutation Sequence](https://www.lucidarme.me/commutation-sequence-for-bldc-motors-using-hall-effect-position-sensors/)
